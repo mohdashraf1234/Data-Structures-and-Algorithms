@@ -22,7 +22,7 @@ public class FindingSumOfDigitsOfA_numberUntilSumBecomesSingleDigit_5 {
 //		}
 //		System.out.println(sum1);
 		
-		int n = 12345;
+		int n = 73738;
 
         while (n >= 10) {  // repeat until single digit
             int sum = 0;
@@ -41,3 +41,4 @@ public class FindingSumOfDigitsOfA_numberUntilSumBecomesSingleDigit_5 {
 	}
 
 }
+
