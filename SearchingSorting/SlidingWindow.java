@@ -1,34 +1,37 @@
 package Searchingu.Sorting;
 
 class SlidingWindow {
+	//Max sum sub array
+	 public static int maxSum(int[] arr, int w) {
+	       int n=arr.length;
+	       int current=0;
+	       //first window
+	       for(int i=0; i<w; i++)
+	       {
+	    	   current =  current+arr[i];
+	       }
+	       //slide  window
+	       int  maxx=current;
+	       for(int i=1;  i<=n-w; i++)
+	       {
+	    	   current=current-arr[i-1]+arr[i+w-1];
+	    	   if(current>maxx)
+	    	   {
+	    		   maxx=current;
+	    	   }
+	       }
+	       return maxx;
+	    }
+	
     public static void main(String[] args) {
-        int[] arr = {2, 1, 5, 1, 3, 2};
-        int k = 3;
+    	
+    	int[] arr = {3, 8, 2, 5, 7, 6, 12};
+        int w = 4;
 
-        SlidingWindow sw = new SlidingWindow();
-        int maxSum = sw.maxSumSubarray(arr, k);
-        System.out.println("Maximum Sum of Subarray of size " + k + " = " + maxSum);
+        int result = maxSum(arr, w);
+        System.out.println("Maximum sum of subarray of size " + w + " is: " + result);
+        //https://www.youtube.com/watch?v=uqGxFk0cEdI
     }
 
-    int maxSumSubarray(int[] arr, int k) {
-        int n = arr.length;
-        int windowSum = 0;
-        int maxSum;
-
-        // Step 1: Calculate sum of first window
-        for (int i = 0; i < k; i++) {
-            windowSum += arr[i];
-        }
-
-        maxSum = windowSum;
-
-        // Step 2: Slide the window
-        for (int i = k; i < n; i++) {
-            windowSum += arr[i] - arr[i - k]; // Add new element, remove old
-            maxSum = Math.max(maxSum, windowSum);
-        }
-
-        return maxSum;
-    }
 }
 
