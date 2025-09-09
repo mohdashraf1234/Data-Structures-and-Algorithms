@@ -12,3 +12,4 @@ public class SumOfDigitOfNumber_9 {
 	}
 
 }
+
