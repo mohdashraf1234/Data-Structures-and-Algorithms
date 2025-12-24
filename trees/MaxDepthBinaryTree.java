@@ -31,4 +31,5 @@ public class MaxDepthBinaryTree {
         int depth = maxDepth(root);
         System.out.println("Maximum Depth of Binary Tree: " + depth);
     }
+
 }
